@@ -1,6 +1,6 @@
 /*
 Project:  ARPS2-IO-Test
-Date:     February 4, 2025
+Date:     February 5, 2025
 
 Functional test of all on-board ARPS2 I/O devices.
 
@@ -89,7 +89,7 @@ int rawQ2;
 float volts;
 
 bool servoMax = false;  // Servo output position flag
-int updateCount = 100;  // Analog/SONAR update counter
+int loopCount = 100;    // Analog/SONAR update loop counter
 
 int range;              // SONAR range result
 
@@ -122,7 +122,7 @@ void setup() {
   Serial.println(F("SW2 - light LED2"));
   Serial.println(F("SW3 - light LED3"));
   Serial.println(F("SW4 - LED sequence and tones"));
-  Serial.println(F("SW5 - Monitor IR"));
+  Serial.println(F("SW5 - Monitor IR Input"));
   delay(1000);
 }
 
@@ -187,8 +187,8 @@ void loop() {
 
   // Update distance and analog measurements, and alternate servo
   // output approximately every second.
-  if(updateCount == 0) {
-    updateCount = 100;
+  if(loopCount == 0) {
+    loopCount = 100;
 
     // Get SONAR range
     range = sonarRange(50);    // Look for a target within 50cm
@@ -227,7 +227,7 @@ void loop() {
     }
   }
 
-  updateCount -= 1;
+  loopCount -= 1;
 
   delay(10);
 }
