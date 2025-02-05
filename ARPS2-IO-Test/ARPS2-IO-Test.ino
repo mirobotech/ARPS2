@@ -232,13 +232,14 @@ void loop() {
   delay(10);
 }
 
-// SONAR range function with maximum range limit and error checking.
-// Returns range of the closest target in cm. 'max' parameter (cm)
-// limits search range. Returns -1 if previous ranging operation is
-// still in progress, 0 if no target is found within the specified
-// max range, or range to closest target in cm. Example use:
-// range = sonarRange(100);  // Find closest target within 100 cm
-
+/*
+SONAR ranging function with maximum range limit and error checking.
+Returns the range to the closest target in cm. The 'max' parameter
+(cm) limits the maximum search range. Returns either: -1 if a previous
+ranging operation is still in progress; 0 if no target is found within
+the max range; or the range to closest target in cm. Example use:
+range = sonarRange(100);  // Find closest target within 100 cm
+*/
 int sonarRange(int max) {
   if(digitalRead(ECHO) == HIGH) {
     return -1;                // ECHO in progress. Return error code.
@@ -246,12 +247,17 @@ int sonarRange(int max) {
   digitalWrite(TRIG, HIGH);   // All clear? Trigger a new SONAR ping.
   delayMicroseconds(10);
   digitalWrite(TRIG, LOW);
-  // Time ECHO pulse duration. Includes TRIG setup and transmit time
+  // Time the ECHO pulse duration (includes TRIG setup and transmit
+  // time suitable for most 5V HC-SR04 SONAR modules).
   unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 320);
-  // Some 3.3V HC-SR04P modules may have much longer setup times than
-  // 5V HC-SR04 modules. Use the line below (commenting out the line
-  // above) when using a 3.3V HC-SR04P module.
+
+  // Note: some 3.3V-capable HC-SR04P modules may have much longer
+  // TRIG setup times than 5V HC-SR04 modules. Comment out the line
+  // above and use the line below when using a slower HC-SR04P module.
+
+  // Time the ECHO pulse duration (for slower HC-SR04P SONAR modules)
   // unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 2320);
+
   if(duration == 0) {
     return 0;                 // Return 0 if no target is within max range
   }
