@@ -1,6 +1,6 @@
 /*
 Project:  ARPS2-IO-Test
-Date:     February 5, 2025
+Date:     February 13, 2025
 
 Functional test of all on-board ARPS2 I/O devices.
 
@@ -178,10 +178,10 @@ void loop() {
   // Monitor IR pulses from U3 using LED2
   if(SW5State == LOW) {
     if(digitalRead(IR) == LOW) {
-      digitalWrite(LED2, HIGH);
+      digitalWrite(LED5, HIGH);
     }
     else {
-      digitalWrite(LED2, LOW);
+      digitalWrite(LED5, LOW);
     }
   }
 
