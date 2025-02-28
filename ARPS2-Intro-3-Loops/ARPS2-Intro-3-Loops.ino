@@ -1,7 +1,7 @@
 /*
 Project:  ARPS2-Intro-3-Loops
 Activity: mirobo.tech/arps-intro-3
-Updated:  February 26, 2025
+Updated:  February 28, 2025
 
 This introductory programming activity for the mirobo.tech ARPS2 circuit
 demonstrates the use of both while-loop and for-loop structures to change
