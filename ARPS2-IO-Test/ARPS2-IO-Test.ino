@@ -240,7 +240,7 @@ ranging operation is still in progress; 0 if no target is found within
 the max range; or the range to closest target in cm. Example use:
 range = sonarRange(100);  // Find closest target within 100 cm
 */
-int sonarRange(int max) {
+int sonarRange(unsigned long max) {
   if(digitalRead(ECHO) == HIGH) {
     return -1;                // ECHO in progress. Return error code.
   }
@@ -249,7 +249,7 @@ int sonarRange(int max) {
   digitalWrite(TRIG, LOW);
   // Time the ECHO pulse duration (includes TRIG setup and transmit
   // time suitable for most 5V HC-SR04 SONAR modules).
-  unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 320);
+  unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 300);
 
   // Note: some 3.3V-capable HC-SR04P modules may have much longer
   // TRIG setup times than 5V HC-SR04 modules. Comment out the line
@@ -261,5 +261,5 @@ int sonarRange(int max) {
   if(duration == 0) {
     return 0;                 // Return 0 if no target is within max range
   }
-  return (int(duration / 58));	// Return distance to target in cm
+  return(int(duration / 58));	// Return distance to target in cm
 }
