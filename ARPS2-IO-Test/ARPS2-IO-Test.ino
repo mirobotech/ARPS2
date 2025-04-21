@@ -249,7 +249,7 @@ int sonarRange(unsigned long max) {
   digitalWrite(TRIG, LOW);
   // Time the ECHO pulse duration (includes TRIG setup and transmit
   // time suitable for most 5V HC-SR04 SONAR modules).
-  unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 300);
+  unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 260);
 
   // Note: some 3.3V-capable HC-SR04P modules may have much longer
   // TRIG setup times than 5V HC-SR04 modules. Comment out the line
