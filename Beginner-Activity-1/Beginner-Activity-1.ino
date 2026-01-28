@@ -37,7 +37,7 @@ Program Analysis Activities
 
 1.  The included ARPS2.h header file helps you get started more quickly
     by pre-defining the I/O pins connected to ARPS2's devices, such as
-    the LEDs. The statement:
+    its LEDs. The statement:
     
     pinMode(LED2, OUTPUT);
     
@@ -52,13 +52,13 @@ Program Analysis Activities
     Add a second LED output statement to light LED3 below the statement
     that lights LED2. Run the program and describe what happens.
 
-2.  Each line of the program code is read in sequence from top to the
+2.  Each line of the program code is read in sequence from the top to the
     bottom of the program, and each statment is run only once.
     
     Most microcontroller programs need to run their main code over and
     over again instead of just once. In Arduino C code, program statements
-    inside the setup() function run once, while program statement in the
-    oop() function are repeated. In Arduino programs, it's important that
+    inside the setup() function run once, while program statements in the
+    loop() function are repeated. In Arduino programs, it's important that
     all program statments are part of a function, and this can be ensured
     by placing them inside a function's curly braces '{ }'.
     
@@ -80,7 +80,7 @@ void loop()
     describe the result.
 
 4.  Let's try to blink LED3 on and off. Replace the contents of the main
-    loop() function with two LED satements, so that it looks like this:
+    loop() function with two LED statements, so that it looks like this:
 
 void loop()
 {
