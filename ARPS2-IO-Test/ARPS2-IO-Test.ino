@@ -17,7 +17,7 @@ and note that SW2 and SW3 will be inoperable as their I/O pins share
 the UART RX and TX pins used for USB communication on Arduino UNO R3.
 
 To verify the operation of the optional voltage divider circuit,
-connect an external 6-12V power supply to the batter terminals of
+connect an external 6-12V power supply to the battery terminals of
 screw terminal header CON1.
 
 This program also includes a SONAR range function designed to verify
@@ -249,14 +249,14 @@ int sonarRange(unsigned long max) {
   digitalWrite(TRIG, LOW);
   // Time the ECHO pulse duration (includes TRIG setup and transmit
   // time suitable for most 5V HC-SR04 SONAR modules).
-  unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 260);
+  // unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 260);
 
   // Note: some 3.3V-capable HC-SR04P modules may have much longer
   // TRIG setup times than 5V HC-SR04 modules. Comment out the line
-  // above and use the line below when using a slower HC-SR04P module.
+  // above and use the line below when using a HC-SR04P module.
 
-  // Time the ECHO pulse duration (for slower HC-SR04P SONAR modules)
-  // unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 2320);
+  // Time the ECHO pulse duration for HC-SR04P SONAR modules
+  unsigned long duration = pulseIn(ECHO, HIGH, max * 58 + 2320);
 
   if(duration == 0) {
     return 0;                 // Return 0 if no target is within max range
