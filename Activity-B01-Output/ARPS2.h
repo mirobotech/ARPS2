@@ -1,15 +1,16 @@
 /* =============================================================================
 ARPS2.h
-v1.0 Jan. 27, 2026
+February 1, 2026
 
 Board header file for the mirobo.tech ARPS-2 circuit.
 
-This header file pre-defines all of the ARPS-2 I/O devices allowing
+This header file defines all of the ARPS-2 I/O devices allowing
 beginners to focus on learning programming concepts more quickly.
 
 ARPS-2 hardware notes:
-- Pushutton swithces use internal pull-up resistors (so pressed == LOW)
-- LEDs and motor driver share I/O pins (so much I/O, too few I/O pins!)
+- Pushutton switches use internal pull-up resistors (so pressed == LOW)
+- LEDs and motor driver share I/O pins
+- Headers H1-H4 are shared between digital I/O, analog I/O, I2C, and SONAR
 ==============================================================================*/
 
 #ifndef ARPS2_H
@@ -21,9 +22,9 @@ ARPS-2 hardware notes:
 /* =====================================
  * Pushbutton Pins (Active LOW)
  * ====================================*/
-// NOTE: W2 and SW3 are fully supported on Arduion UNO R4 Minima and Arduino 
+// NOTE: SW2 and SW3 are fully supported on Arduion UNO R4 Minima and Arduino 
 // UNO R4 WiFi. Arduino UNO Rev 3 uses D0 and D1 as serial Rx and Tx lines
-// which prevents SW2 and SW3 from operating while programming and debugging.
+// which prevents SW2 and SW3 from operating during programming and debugging.
 
 const uint8_t SW2 = 0;    // UNO R4 only!
 const uint8_t SW3 = 1;    // UNO R4 only!
