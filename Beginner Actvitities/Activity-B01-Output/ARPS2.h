@@ -59,7 +59,7 @@ const uint8_t M2B = 11;   // Right motor terminal B
  * Piezo Beeper Pin
  * ====================================*/
 
-const uint8_t BEEPER = 6; // ARPS2 Piezo beeper LS1
+const uint8_t LS1 = 6;    // ARPS2 Piezo beeper LS1
 
 
 /* =====================================

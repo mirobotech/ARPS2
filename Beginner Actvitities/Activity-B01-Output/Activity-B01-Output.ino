@@ -1,5 +1,5 @@
 /* ================================================================================
-Beginner Activity 1: Digital Output [Activity-B01-Output]
+Beginner Activity 1: Output [Activity-B01-Output]
 February 2, 2026
 
 Platform: mirobo.tech ARPS-2 circuit (any configuration)
@@ -13,14 +13,14 @@ Requires: ARPS2.h header file
 // ---------------------------------------------------------------
 void setup()
 {
-  // Configure ARPS2 LEDs as outputs
-  pinMode(LED2, OUTPUT);
-  pinMode(LED3, OUTPUT);
-  pinMode(LED4, OUTPUT);
-  pinMode(LED5, OUTPUT);
+    // Configure ARPS2 LEDs as outputs
+    pinMode(LED2, OUTPUT);
+    pinMode(LED3, OUTPUT);
+    pinMode(LED4, OUTPUT);
+    pinMode(LED5, OUTPUT);
 
-  // Turn on one LED
-  digitalWrite(LED2, HIGH);
+    // Turn on one LED
+    digitalWrite(LED2, HIGH);
 }
 
 // ---------------------------------------------------------------
@@ -28,7 +28,7 @@ void setup()
 // ---------------------------------------------------------------
 void loop()
 {
-  // Nothing here for now
+    // Nothing here for now
 }
 
 /*
@@ -81,7 +81,7 @@ Program Analysis Activities
 
 // void loop()
 // {
-  // Nothing here for now
+    // Nothing here for now
 // }
 
     Doubld slashes signify the start of a code comment, used by
@@ -97,8 +97,8 @@ Program Analysis Activities
 
 void loop()
 {
-  digitalWrite(LED3, HIGH);
-  digitalWrite(LED3, LOW);
+    digitalWrite(LED3, HIGH);
+    digitalWrite(LED3, LOW);
 }
 
     The loop will run each statement once, first turning LED3 on,
