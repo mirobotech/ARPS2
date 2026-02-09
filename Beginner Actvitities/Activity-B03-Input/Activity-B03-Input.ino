@@ -1,6 +1,6 @@
 /* ================================================================================
 Beginner Activity 3: Input [Activity-B03-Input]
-February 6, 2026
+February 9, 2026
 
 Platform: mirobo.tech ARPS-2 circuit (any configuration)
 Requires: ARPS2.h header file
