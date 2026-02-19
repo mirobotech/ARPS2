@@ -5,19 +5,19 @@ February 3, 2026
 Platform: mirobo.tech ARPS-2 circuit (any configuration)
 Requires: ARPS2.h header file
 =================================================================================*/
-// IMPORTANT: Make sure that ARPS2.h is accerssible as a tab in this project.
-#include "ARPS2.h"      // Define ARPS2 I/O devices
+// IMPORTANT: Make sure that ARPS2.h is accessible as a tab in this project.
+#include "ARPS2.h"      // Define ARPS-2 I/O devices
 
 // ---------------------------------------------------------------
 // Setup runs once at power-up
 // ---------------------------------------------------------------
 void setup()
 {
-    // Configure Arduino Nano ESP32 status LED as output
+    // Configure Arduino UNO status LED as output
     pinMode(LED_BUILTIN, OUTPUT);
     digitalWrite(LED_BUILTIN, HIGH);    // Status LED on
 
-    // Configure ARPS2 LEDs as outputs
+    // Configure ARPS-2 LEDs as outputs
     pinMode(LED2, OUTPUT);
     pinMode(LED3, OUTPUT);
     pinMode(LED4, OUTPUT);
@@ -42,11 +42,11 @@ void loop()
 /*
 Program Analysis Activities
 
-1.  In the previous activity you learned that the BEAPERNano.h
-    header file defines all of BEAPER Nano's I/O devices. (You
+1.  In the previous activity you learned that the ARPS2.h
+    header file defines all of the ARPS-2 I/O devices. (You
     can open the file in the editor and view its contents!)
     
-    So, if BEAPERNano.h describes the hardware, is there a
+    So, if ARPS2.h describes the hardware, is there a
     similar file that describes the software? How can we know,
     for example, that the 'delay(500);' statement in the program
     above really delays for 0.5 seconds?
@@ -72,33 +72,33 @@ Program Analysis Activities
 
     Take a look at both the Description, and the Notes and Warnings
     section of the delay() function's documentation. What does the
-    delay() function actually do? What does the micorcontroller do
+    delay() function actually do? What does the microcontroller do
     while it's executing the delay() function? Why could this be
     a problem for some programs?
     
 2.  Arduino also has a delay function called 'delayMicroseconds()'.
 
     Look up the delayMicroseconds() function in the Language
-    Reference. Do you think it would be a good idea to use to
+    Reference. Do you think it would be a good idea to use it to
     replace the 0.5 second delay in this program? Why or why not?
 
 3.  What do you think would happen if the 'delay(500);' statements
     in the program were replaced with 'delayMicroseconds(500);'
-    statements? Try it! Change both delay functions in the
-    program to delayMicroseconds(500) and describe what run the
-    program. Describe what the LEDs are doing.
+    statements? Try it! Change both delay functions to
+    delayMicroseconds(500), run the program, and describe what
+    the LEDs are doing.
     
 4.  While microsecond delays are much too short to see, they can
     be used to make other signals including sound waves! Some
     piezo speakers make a sound when powered on, but the speaker
-    used on BEAPER Nano needs to be rapidly turned on and off to
+    used on ARPS-2 needs to be rapidly turned on and off to
     create audible frequencies. Let's try it!
 
     First, add this statement to the setup() function:
 
     pinMode(LS1, OUTPUT);
 
-    This statement dewfines the microcontroller's pin connecting
+    This statement defines the microcontroller's pin connecting
     to piezo speaker LS1 as an output. Next, replace the entire
     loop() function in the existing program with the new loop
     function, below:
@@ -116,8 +116,13 @@ void loop()
     output pin will add up to create the 2272 microsecond time 
     period of a 440Hz sound wave.
 
-5.  There is an easier and more flexible way way to produce sound
-    frequencies by using Arduino's tone() and  noTone() functions. 
+    Hey, are the LEDs still flashing while the sound is playing?
+    Stop the program and then ponder what the program is actually
+    doing. Explain what is happening and why you think the LEDs
+    are no longer blinking.
+
+5.  There is an easier and more flexible way to produce sound
+    frequencies by using Arduino's tone() and noTone() functions. 
 
     Remove all of the loop code added in the previous activity
     step. Next, replace it with this one, which is very much like
@@ -138,8 +143,9 @@ void loop()
 }
 
     Look up the tone() function in the Arduino Language Reference.
-
-    What do the three parameters inside the brackets represent?
+    What do the three parameters inside its brackets represent?
+    How does the tone duration parameter compare to the separate
+    delay() function used here - do you think both are needed?
 
 
 Programming Activities
@@ -154,7 +160,7 @@ Programming Activities
     or make a more unique or artistic pattern - it's up to you!
 
 3.  Really old computers used lights to show binary values. Try to
-    simulate a binary count on BEAPER Nano's LEDs.
+    simulate a binary count on ARPS-2's LEDs.
     
 4.  Create a musical sequence of tones that repeats after a pause. 
     
