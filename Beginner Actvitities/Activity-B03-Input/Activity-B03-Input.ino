@@ -5,25 +5,25 @@ February 11, 2026
 Platform: mirobo.tech ARPS-2 circuit (any configuration)
 Requires: ARPS2.h header file
 =================================================================================*/
-// IMPORTANT: Make sure that ARPS2.h is accerssible as a tab in this project.
-#include "ARPS2.h"      // Define ARPS2 I/O devices
+// IMPORTANT: Make sure that ARPS2.h is accessible as a tab in this project.
+#include "ARPS2.h"      // Define ARPS-2 I/O devices
 
 // ---------------------------------------------------------------
 // Setup runs once at power-up
 // ---------------------------------------------------------------
 void setup()
 {
-    // Configure Arduino Nano ESP32 status LED as output
+    // Configure Arduino UNO status LED as output
     pinMode(LED_BUILTIN, OUTPUT);
     digitalWrite(LED_BUILTIN, HIGH);    // Status LED on
 
-    // Configure ARPS2 LEDs as outputs
+    // Configure ARPS-2 LEDs as outputs
     pinMode(LED2, OUTPUT);
     pinMode(LED3, OUTPUT);
     pinMode(LED4, OUTPUT);
     pinMode(LED5, OUTPUT);
 
-    // Configure ARPS2 pushbuttons as inputs
+    // Configure ARPS-2 pushbuttons as inputs
     pinMode(SW2, INPUT_PULLUP);
     pinMode(SW3, INPUT_PULLUP);
     pinMode(SW4, INPUT_PULLUP);
@@ -66,15 +66,15 @@ void loop()
         delay(200);
     }
 
-    delay(20);  // Add a short loop delay
+    delay(20);  // Short delay for button debouncing
 }
 
 
 /*
 Program Analysis Activities
 
-1.  The pushbuttons in the ARPS-2 circuit are connected in what is
-    known as a pull-up configuration, meaning one side of each
+1.  The pushbuttons in the ARPS-2 circuit are connected in what
+    is known as a pull-up configuration, meaning one side of each
     pushbutton switch is wired in series with a resistor that is
     connected, or 'pulled-up', to the power supply potential. The
     other terminal of the pushbutton switch is connected to ground,
@@ -85,9 +85,12 @@ Program Analysis Activities
     The inactive potential (when the pushbutton is not pressed) of a
     pull-up circuit will be a high voltage due to the resistor's power
     supply connection, and the active potential (when the pushbutton is
-    pressed) will be 0V. This pull-up circuit arrangment creates what
+    pressed) will be 0V. This pull-up circuit arrangement creates what
     is commonly referred to as an 'active-low' pushbutton switch.
-    
+
+    What value do you expect digitalRead(SW2) to return when SW2 is
+    not pressed? What about when SW2 is pressed?
+
     Arduino's digitalRead() function is used to read the value of
     I/O pins, and it reads pins as being either HIGH or LOW (exactly
     like the values set using the digitalWrite() function). Let's
@@ -105,14 +108,14 @@ Program Analysis Activities
 
     The 'if' statement, known as an 'if condition', employs a similar
     structure to that used by the main loop(). That is, the program
-    statements indented below the if statement will execute whenever
-    the if condition is true. And, in this case the condition will be
-    true when the value of the SW2 pin is equal to LOW (two equals
-    signs are used to check and compare values, as oppposed to one
-    one equals sign being used to set a value).
+    statements inside the if block will execute whenever the if
+    condition is true. And, in this case the condition will be true
+    when the value of the SW2 pin is equal to LOW (two equals signs
+    are used to check and compare values, as opposed to one equals
+    sign being used to set a value).
 
     This if condition also includes a complementary 'else' statement,
-    whcih will logically be the opposite of if. When if is true, else
+    which will logically be the opposite of if. When if is true, else
     will be false, and when if is false, else will become true.
 
     Looking at SW2's if-else condition, explain the program flow when
@@ -131,7 +134,7 @@ Program Analysis Activities
     playing the tone until either: another call to tone() changes the
     frequency, or the noTone() function is called to stop the tone.
 
-    An if-else condition is an ideal way to play the tone while a
+    An if-else condition is an ideal way to play a tone while a
     button is being pressed, and stop it when the button is released.
     Add this code to your program to try it out:
 
@@ -145,8 +148,8 @@ Program Analysis Activities
     }
 
     What is the advantage of using an 'if-else' structure instead of
-    using two separate if conditions – one to start the tone, and a
-    second to stop the tone – to do the same thing?
+    using two separate if conditions - one to start the tone, and a
+    second to stop the tone - to do the same thing?
 
 4.  Let's try using a combination of two pushbuttons to turn on one
     LED. One way to accomplish this is by nesting one if-else
@@ -188,9 +191,9 @@ Program Analysis Activities
     ways is this solution better than using nested if-else conditions?
     
 6.  The logical '||' (OR) operator can also be used in conditional
-    expressions. Describe the when the LED would be lit if the SW3
+    expressions. Describe when the LED would be lit if the SW3
     and SW4 pushbutton inputs in the activity were combined using a
-    logical or operator instead of the and operator in the condition.
+    logical OR operator instead of the AND operator in the condition.
 
 
 Programming Activities
