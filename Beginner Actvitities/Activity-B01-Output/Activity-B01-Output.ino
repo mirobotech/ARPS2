@@ -5,15 +5,15 @@ February 2, 2026
 Platform: mirobo.tech ARPS-2 circuit (any configuration)
 Requires: ARPS2.h header file
 =================================================================================*/
-// IMPORTANT: Make sure that ARPS2.h is accerssible as a tab in this project.
-#include "ARPS2.h"      // Define ARPS2 I/O devices
+// IMPORTANT: Make sure that ARPS2.h is accessible as a tab in this project.
+#include "ARPS2.h"      // Define ARPS-2 I/O devices
 
 // ---------------------------------------------------------------
 // Setup runs once at power-up
 // ---------------------------------------------------------------
 void setup()
 {
-    // Configure ARPS2 LEDs as outputs
+    // Configure ARPS-2 LEDs as outputs
     pinMode(LED2, OUTPUT);
     pinMode(LED3, OUTPUT);
     pinMode(LED4, OUTPUT);
@@ -35,7 +35,7 @@ void loop()
 Program Analysis Activities
 
 1.  The 'included' ARPS2.h header file helps you start programming
-    more quickly. It does this by defining each ARPS2 I/O device,
+    more quickly. It does this by defining each ARPS-2 I/O device,
     and the pin of the Arduino microcontroller that it connects to. 
     
     For example, the program statement:
@@ -47,7 +47,7 @@ Program Analysis Activities
     digitalWrite(LED2, HIGH);
     
     makes the output voltage of the LED2 pin either HIGH (5V), or
-    LOW (0V). All of the other ARPS2 LEDs (LED3 - LED5) can be
+    LOW (0V). All of the other ARPS-2 LEDs (LED3 - LED5) can be
     controlled in exactly the same way. Let's try it!
 
     Add a second LED output statement to light LED3 into your
@@ -65,7 +65,7 @@ Program Analysis Activities
     while program statements in the loop() function are repeated.
     
     In Arduino programs, all program statements must be part of a
-    function, and this can be ensured by placing them inside a the
+    function, and this can be ensured by placing them inside the
     curly braces '{ }' that enclose the function.
     
     In this program, would it make sense to put the digitalWrite
@@ -75,8 +75,8 @@ Program Analysis Activities
 
 3.  Since the loop() function contains no program code, you might
     think it would be possible to simply get rid of it. Instead of
-    deleting it (you can, we'll add a new loop() in next step),
-    let's just comment-out the looop code using double slashes,
+    deleting it (you can try, and we'll add a new loop() in the next
+    step), let's just comment-out the loop code using double slashes,
     like this:
 
 // void loop()
@@ -84,7 +84,7 @@ Program Analysis Activities
     // Nothing here for now
 // }
 
-    Doubld slashes signify the start of a code comment, used by
+    Double slashes signify the start of a code comment, used by
     programmers to explain the meaning or actions of complex code.
     The C compiler ignores anything in the same line following the
     double slashes, so this code will be 'commented-out', or 
@@ -127,9 +127,9 @@ Programming Activities
 3.  Create a program that lights a pattern using at least two of the
     on-board LEDs. Run your program to verify that it works as expected.
 
-4.  The ARPS2.h header file refers to the pin definition for Arduino
+4.  The ARPS2.h header file refers to the pin definition for the Arduino
     UNO's on-board LED (it doesn't need to define it since the Arduino
-    IDE already knows that it is are part ot the Arduino UNO circuit.)
+    IDE already knows that it is part of the Arduino UNO circuit.)
     
     To use the Arduino UNO's on-board LED, it must first be configured
     as an output using the pinMode() function:
@@ -137,7 +137,7 @@ Programming Activities
     pinMode(LED_BUILTIN, OUTPUT);
 
     Then, it can be turned on using the digitalWrite() function,
-    exacltly as with BEAPER Nano's LEDs:
+    exactly as with the ARPS-2 LEDs:
     
     digitalWrite(LED_BUILTIN, HIGH);
 
