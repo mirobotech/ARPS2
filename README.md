@@ -4,6 +4,17 @@
 
 This repository contains Introductory Programming Activities and starter program templates for the [mirobo.tech ARPS-2](https://mirobo.tech/arps) circuit.
 
+## Beginner Activities
+
+New! ARPS-2 Beginner Learning Activities
+
+* Activity-B01-Output - Output, program structure
+* Activity_B02-Timing - Output with timing (blocking)
+* Activity-B03-Input- Input programming activity, including logic states
+* Activity-B04-Constants_Variables - Constants and Variables activity
+* B04-Constants-Variables-Exploration - Constants and Variables extension project
+* Activity-B05-Decision_Structures - Decision structures and comparison operators
+
 ## Introductory Programming Activities
 
 * ARPS2-Intro-1 - Input and output programs, including if conditions, logical conditions, simple sounds, and the creation of a start-stop pushbutton circuit and bicycle turn signals
