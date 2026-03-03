@@ -14,6 +14,7 @@ New! ARPS-2 Beginner Learning Activities
 * Activity-B04-Constants_Variables - Constants and Variables activity
 * B04-Constants-Variables-Exploration - Constants and Variables extension project
 * Activity-B05-Decision_Structures - Decision structures and comparison operators
+* Activity_B06_Conditional_Loops.py - Conditional while loops
 
 ## Introductory Programming Activities
 
