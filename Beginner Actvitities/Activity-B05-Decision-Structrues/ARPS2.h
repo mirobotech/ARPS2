@@ -1,10 +1,11 @@
 /* =============================================================================
 ARPS2.h
-February 20, 2026
+March 9, 2026
 
 Board header file for the mirobo.tech ARPS-2 circuit.
 
-This header file defines all of the ARPS-2 I/O devices allowing
+This header file defines Arduino UNO R4's GPIO pins for ARPS-2 
+on-board circuits and provides simple helper functions to enable
 beginners to focus on learning programming concepts more quickly.
 
 ARPS-2 hardware notes:
@@ -16,8 +17,44 @@ ARPS-2 hardware notes:
 #ifndef ARPS2_H
 #define ARPS2_H
 
+/* =====================================
+ * On-board Arduino LED
+ * ====================================*/
 // Pre-defined Arduino UNO LED
+
 // LED_BUILTIN (D13)      // On-board LED (shared with H2 and SONAR TRIG)
+
+
+/* =====================================
+ * LED Pins
+ * ====================================*/
+// IMPORTANT: LED pins are shared with the motor controller. Using the
+// LEDs while the motors are active will affect motor behavior!
+
+const uint8_t LED2 = 3;   // M1A
+const uint8_t LED3 = 9;   // M1B
+const uint8_t LED4 = 10;  // M2A
+const uint8_t LED5 = 11;  // M2B
+
+const uint8_t LEDS[] = {LED2, LED3, LED4, LED5};  // Array of all LED pins
+const uint8_t NUM_LEDS = 4;
+
+inline void leds_on()
+{
+    digitalWrite(LED2, HIGH);
+    digitalWrite(LED3, HIGH);
+    digitalWrite(LED4, HIGH);
+    digitalWrite(LED5, HIGH);
+}
+
+inline void leds_off()
+{
+    digitalWrite(LED2, LOW);
+    digitalWrite(LED3, LOW);
+    digitalWrite(LED4, LOW);
+    digitalWrite(LED5, LOW);
+}
+
 
 /* =====================================
  * Pushbutton Pins (Active LOW)
@@ -36,24 +73,10 @@ const uint8_t NUM_SWITCHES = 4;
 
 
 /* =====================================
- * LED Pins
- * ====================================*/
-// IMPORTANT: LED pins are shared with the motor controller. Using the
-// LEDs while the motors are active will affect motor behavior!
-
-const uint8_t LED2 = 3;   // M1A
-const uint8_t LED3 = 9;   // M1B
-const uint8_t LED4 = 10;  // M2A
-const uint8_t LED5 = 11;  // M2B
-
-const uint8_t LEDS[] = {LED2, LED3, LED4, LED5};  // Array of all LED pins
-const uint8_t NUM_LEDS = 4;
-
-
-/* =====================================
  * Motor Pins
  * ====================================*/
-// ARPS-2 motor output pin definitions (redefines same I/O pins as LEDs)
+// IMPORTANT: Motor output pins aare shared with the LEDs. Using the LEDs
+// while driving the motors will affect motor behaviour!
 
 const uint8_t M1A = 3;    // Left motor terminal A
 const uint8_t M1B = 9;    // Left motor terminal B
@@ -61,8 +84,8 @@ const uint8_t M2A = 10;   // Right motor terminal A
 const uint8_t M2B = 11;   // Right motor terminal B
 
 // Motor helper functions
-// IMPORTANT: Call pinMode() for all motor pins in setup() before using
-// these functions. Motor pins share I/O with LED pins, so a single set
+// Call pinMode() for all motor pins in setup() before using these
+// functions. Motor pins share I/O with LED pins, so a single set
 // of pinMode() calls covers both LEDs and motors.
 //
 // Suggested setup() pinMode calls:
@@ -122,6 +145,11 @@ inline void right_motor_stop()
 
 const uint8_t LS1 = 6;    // ARPS-2 Piezo beeper LS1
 
+inline void beep()
+{
+    tone(LS1, 1000, 100); // Make a short beep
+}
+
 
 /* =====================================
  * Expansion Header I/O Pins
@@ -148,12 +176,12 @@ const uint8_t IR = 5;     // Demodulator U3
 /* =====================================
  * Analog I/O Pins
  * ====================================*/
-// NOTE: Analog inputs AH1 and AH4 are shared with D18, D19, and I2C SDA, SCL
+// Analog inputs AH1 and AH4 are shared with D18, D19, and I2C SDA, SCL
 
 // NOTE: Q2 and Q3 share analog input A1. This is by design to save an analog
-// input since Q2 is designed to be used with Q1 for line sensing, while Q3
-// is designed to be used with Q1 for floor sensing:
-// - Robot line sensor:  install both Q1 and Q2 phototransistors in L module
+// input pin (Q2 is designed to be used with Q1 for line sensing, while Q3
+// is designed to be used with Q1 for floor sensing):
+// - Robot line sensors:  install both Q1 and Q2 phototransistors in L module
 // - Robot floor sensors: install only Q1 in L module, and Q3 in R module
 
 const uint8_t Q1 = A0;    // Left floor/line sensor phototransistor Q1
@@ -166,7 +194,7 @@ const uint8_t AH4 = A5;   // Analog input from header H4 (shared with D19)
 
 // NOTE: Arduino UNO R4 Minima and Arduino UNO R4 WiFi both support 10-bit
 // (default, 0-1023), 12-bit (0-4095), and 14-bit (0-16383) resolution via
-// analogReadResolution(12) in setup(). See intermediate activities for
+// analogReadResolution() in setup(). See the intermediate activities for
 // higher resolution use.
 
 // Analog helper functions: these analog helper functions return 10-bit
@@ -177,6 +205,5 @@ inline int Q2_level() { return 1023 - analogRead(Q2); }   // Higher reflectivity
 inline int Q3_level() { return 1023 - analogRead(Q3); }   // Higher reflectivity -> higher values (floor mode)
 inline int temp_level() { return analogRead(ATEMP); }     // Warmer -> higher values
 inline int ADIV_level() { return analogRead(ADIV); }      // Voltage divider tap
-
 
 #endif
