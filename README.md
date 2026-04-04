@@ -16,6 +16,8 @@ New! ARPS-2 Beginner Learning Activities
 * Activity-B05-Decision_Structures - Decision structures and comparison operators
 * Activity-B06-Conditional-Loops - Conditional while loops
 * Activity-B07-Counted-Loops - For loops
+* Activity-B08-Functions - Creating and using functions
+* Activity-B09-Analog-Input - Reading and processing analog input values
 
 ## Introductory Programming Activities
 
