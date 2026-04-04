@@ -18,6 +18,10 @@ New! ARPS-2 Beginner Learning Activities
 * Activity-B07-Counted-Loops - For loops
 * Activity-B08-Functions - Creating and using functions
 * Activity-B09-Analog-Input - Reading and processing analog input values
+* Activity-B10-AnalogOutput - Controlling real-world outputs
+* B10-Motor-Controller-Project - PWM motor output
+* B10-Servo-Controller-Project - Servo output
+* B10-Sound-Controller-Project - Sound output
 
 ## Introductory Programming Activities
 
