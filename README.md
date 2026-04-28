@@ -1,12 +1,16 @@
 # ARPS2 – Arduino Robot Project Shield version 2
 
-## Beginner activities and starter programs for the ARPS (Arduino Robot Project Shield, version 2) circuit.
+## Arduino Robot Project Shield (ARPS), version 2 circuit.
 
-This repository contains Introductory Programming Activities and starter program templates for the [mirobo.tech ARPS-2](https://mirobo.tech/arps) circuit.
+[ARPS-2](https://mirobo.tech/arps) is a beginner circuit kit for learning and teaching microcontroller programming and robotics using the Arduino UNO R4 and UNO Rev. 3 family of microcontrollers.
 
-## Beginner Activities
+This repository contains:
+* Beginner Activities - a complete MicroPython beginner curriculum for BEAPER Pico in the form of lesson activities, extension projects, and capstone project templates
+* Older Activities - a set of five introductory activities and four starter program templates for the ARPS-2 circuits shard in Tinkercad
 
-New! ARPS-2 Beginner Learning Activities
+## Beginner Activities - Beginner learning activities
+
+Each beginner activity consists of an example program, Guided Exploration Activities to build understanding, and Extension Activities to practice learned skills. Some beginner activities include additional extension project activities.
 
 * Activity-B01-Output - Output, program structure
 * Activity_B02-Timing - Output with timing (blocking)
@@ -26,10 +30,17 @@ New! ARPS-2 Beginner Learning Activities
 * B11-Timed-Analog-Output - Non-blocking timing project
 * Activity-B12-State-Machines - A new way to structure programs
 * B12-Combination-Lock-Project - Digital safe project
+* Microcontroller Core Curriculum.md - Curriculum overview
+* Numeric Types.md - Numeric types explainer
+* Capstone Preparation Guide - Capstone project explainer
+* Analog-Monitor - Analog monitor capstone project template
+* Line-Follower - Line following robot capstone project template
+* Simon-Game - Memory game capstone project template
+* Sumo-Robot - Sumo robot capstone project template
 
 ## Older Activities
 
-Introductory activities shared on Tinkercad
+Introductory activities shared in Tinkercad
 
 * ARPS2-Intro-1 - Input and output programs, including if conditions, logical conditions, simple sounds, and the creation of a start-stop pushbutton circuit and bicycle turn signals
 * ARPS2-Intro-2 - Variable and constant programming, including the creation of a two-player rapid-clicker game.
@@ -37,7 +48,7 @@ Introductory activities shared on Tinkercad
 * ARPS2-Intro-4 - Functions and variable passing.
 * ARPS2-Intro-5 - Analog input, including serial output and debugging techniques.
 
-Starter program templates shared on Tinkercad
+Starter program templates shared in Tinkercad
 
 * ARPS2-SONAR-Starter - HC-SR04 SONAR module starter program
 * ARPS2-Robot-Starter - General robot starter template
