@@ -1,5 +1,5 @@
 /* ================================================================================
-Beginner Activity 1: Digital Output [Activity-B01-Output]
+Beginner Activity 1: Digital Output [Activity_B01_Output]
 Version: 1.2
 Updated: September 7, 2026
 
