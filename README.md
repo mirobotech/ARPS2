@@ -12,11 +12,11 @@ This repository contains:
 
 Each beginner activity consists of an example program, Guided Exploration Activities to build understanding, and Extension Activities to practice learned skills. Some beginner activities include additional extension project activities.
 
-* Activity-B01-Output - Output, program structure
-* Activity_B02-Timing - Output with timing (blocking)
-* Activity-B03-Input- Input programming activity, including logic states
-* Activity-B04-Constants_Variables - Constants and Variables activity
-* B04-Constants-Variables-Exploration - Constants and Variables extension project
+* Activity_B01_Output - Output, program structure
+* Activity_B02-_iming - Output with timing (blocking)
+* Activity-_03_Input- Input programming activity, including logic states
+* Activity_B04_Constants_Variables - Constants and Variables activity
+* B04_Level_Indicator_Project - Level indicator extension project
 * Activity-B05-Decision_Structures - Decision structures and comparison operators
 * Activity-B06-Conditional-Loops - Conditional while loops
 * Activity-B07-Counted-Loops - For loops
