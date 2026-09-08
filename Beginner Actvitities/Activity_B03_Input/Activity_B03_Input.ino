@@ -172,8 +172,8 @@ GE 3 - Playing a tone while a button is held
 --------------------------------------------------------------------------------
 
 Activity 2's Guided Exploration (GE 6) demonstrated how to use tone()
-with frequency, pin, and duration arguments. Passing tone() only
-frequency and pin arguments causes it to start playing until either
+with pin, frequency, and duration arguments. Passing tone() only
+pin and frequency arguments causes it to start playing until either
 another tone() call changes the frequency, or noTone() is called to
 stop it.
 
@@ -266,7 +266,7 @@ programming starts to feel alive. As you write your own programs,
 get into the habit of adding comments like the ones you saw in the
 starter program — a comment that explains *why* code is written a
 certain way is often more valuable than one that just describes
-*what* it does. Future you will thank present you.
+*what* it does. Future you will thank present you!
 
 --------------------------------------------------------------------------------
 EA 1 - Start/Stop buttons
@@ -307,7 +307,7 @@ EA 4 - Bicycle turn signal
 Imagine that you're creating a turn signal circuit for a bicycle. The
 circuit has four LEDs in a row, just like your circuit, controlled by two
 pushbuttons mounted on the bicycle's handlebars. Write a program to activate
-a turn signal using one or more of BEAPER Nano's LEDs to indicate a left or
+a turn signal using one or more of ARPS-2's LEDs to indicate a left or
 right turn while the corresponding button is held.
 
 For an extra challenge, add brake functionality or a bell/horn
