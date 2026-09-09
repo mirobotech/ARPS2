@@ -1,5 +1,5 @@
 /* ================================================================================
-Beginner Activity 5 Project: Rapid-Clicker Game [B05-Rapid-Clicker-Project]
+Beginner Activity 5 Project: Rapid-Clicker Game [B05_Rapid_Clicker_Project]
 Version: 1.2
 Updated: September 8, 2026
 
