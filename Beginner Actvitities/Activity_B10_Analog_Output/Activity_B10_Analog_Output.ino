@@ -62,10 +62,8 @@ void setup()
     pinMode(SW4, INPUT_PULLUP);
     pinMode(SW5, INPUT_PULLUP);
 
-    Serial.begin(9600);
-    delay(2000);                         // Give Serial Monitor time to
-                                          // connect, without blocking
-                                          // forever if it's never opened
+    Serial.begin(9600);             // Initialize serial output for debugging
+    delay(2000);                    // Give the Serial Monitor time to connect
 
     Serial.println("Activity 10: Analog Output");
     Serial.println("SW3/SW4: dim/brighten LED2");
